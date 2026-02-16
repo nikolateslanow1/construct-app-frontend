@@ -1,0 +1,18 @@
+
+# File: src/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App-level tweaks for the clean, professional look */
+html, body, #root {
+  height: 100%;
+}
+
+:root {
+  --bg: #f8fafc; /* slate-50 */
+}
+
+.body-bg {
+  background-color: var(--bg);
+}
