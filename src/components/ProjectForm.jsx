@@ -15,6 +15,10 @@ const initialState = {
 
 export default function ProjectForm({ onSubmit }) {
   const [formData, setFormData] = useState(initialState);
+  console.log('ProjectForm rendered');
+  React.useEffect(() => {
+    console.log('formData state:', formData);
+  }, [formData]);
 
   const handleChange = (field) => (e) =>
     setFormData((prev) => ({ ...prev, [field]: e.target.value }));  
@@ -78,6 +82,21 @@ export default function ProjectForm({ onSubmit }) {
 
         {/* Center Form */}
     <form onSubmit={handleSubmit} className="col-span-3 bg-white p-12 rounded-xl shadow-card space-y-6 w-full">
+      <div className="flex justify-center mb-4">
+        <span style={{
+          fontSize: '1.5rem',
+          fontWeight: 'bold',
+          color: '#ff6600',
+          background: '#fffbe6',
+          borderRadius: '8px',
+          padding: '10px 20px',
+          boxShadow: '0 2px 8px rgba(255,102,0,0.15)',
+          border: '2px solid #ff6600',
+          display: 'inline-block'
+        }}>
+          🎆 <span style={{ fontSize: '1.2em' }}>Free Project Evaluation and Quote</span> 🎆
+        </span>
+      </div>
       {['name', 'address', 'phone', 'email'].map((field) => (
         <div key={field}>
           <label className="block text-sm font-semibold text-gray-700 mb-1">
@@ -165,17 +184,6 @@ export default function ProjectForm({ onSubmit }) {
           </div>
 
           <div className="pt-6">
-            <h2 className="text-lg font-semibold mb-4">Agency Forms</h2>
-            <ul className="text-sm text-gray-700 space-y-4">
-              <li><strong>DOB Forms:</strong> <a href="https://www.nyc.gov/site/buildings/dob/forms.page" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">DOB link</a></li>
-              <li><strong>FDNY:</strong> TM1 – Simple Click and fill out and submit for processing.</li>
-              <li><strong>DEP:</strong> <a href="https://www.nyc.gov/site/dep/pay-my-bills/forms.page#" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">DEP link</a></li>
-              <li><strong>DOT:</strong> <a href="mailto:ConstructionApprovalsPlus@gmail.com">Email me- Form available upon request</a></li>
-              <li><strong>ECB Violations:</strong> <a href="mailto:ConstructionApprovalsPlus@gmail.com">Email me- Form available upon request</a></li>
-            </ul>
-          </div>
-
-          <div className="pt-6">
             <h2 className="text-lg font-semibold mb-4">Solar Panel Consultation?</h2>
             <ul className="text-sm text-gray-700 space-y-4">
               <li><a href="mailto:ConstructionApprovalsPlus@gmail.com">Need to get your Solar Panels Approved, Inquiry here</a></li>
@@ -184,6 +192,7 @@ export default function ProjectForm({ onSubmit }) {
 
         </div>
       </div>
+
 
       {/* Footer */}
       <footer className="bg-gray-100 text-center py-6 mt-12 border-t border-gray-300">

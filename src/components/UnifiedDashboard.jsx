@@ -103,7 +103,7 @@ export default function UnifiedDashboard() {
   >
     <div className="bg-black/40 px-6 py-4 rounded-lg">
       <h1 className="text-white text-2xl md:text-4xl font-bold tracking-wide">
-        Construction Approval<span className="text-brand-100">+</span> Portal
+        City Code Expeditor Portal
       </h1>
     </div>
   </header>
@@ -130,6 +130,7 @@ export default function UnifiedDashboard() {
       Admin
     </button>
   </nav>
+
 
       <main className="max-w-6xl mx-auto px-6 pb-16">
         {mode === 'customer' && (
@@ -160,6 +161,49 @@ export default function UnifiedDashboard() {
             )}
           </section>
         )}
+
+        {/* === Completed Projects Section === */}
+        <section className="max-w-4xl mx-auto my-12 p-8 bg-white/90 rounded-xl shadow-lg border border-gray-200">
+          <h2 className="text-2xl font-bold mb-6 text-brand-700 border-b pb-2">Completed Projects</h2>
+
+          {/* Project 1 */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-2">87-10 Northern Blvd, Sunnyside NY</h3>
+            <div className="mb-2">
+              <span className="inline-block bg-gray-100 px-3 py-1 rounded text-sm text-gray-600 mr-2"></span>
+            </div>
+            <p className="text-gray-700 mb-2">
+              Processed the permits and secured proper filings with DEP and FDNY for the owner and tenants of the mixed use building. Consisting of office/ Retail/ Pre-School/ and an underground parking lot.
+            </p>
+          </div>
+
+          {/* Project 2 */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-2">47-16 Greenpoint Avenue, Sunnyside NY</h3>
+            <div className="mb-2">
+              <span className="inline-block bg-gray-100 px-3 py-1 rounded text-sm text-gray-600 mr-2"></span>
+            </div>
+            <p className="text-gray-700 mb-2">
+              Handled permitting process for a new large Condo project. Cured associated violations from previous owners that would have normally halted the approval from Department of Buildings and Fire Department
+            </p>
+          </div>
+
+          {/* Project 3 */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-2">Solar Panel</h3>
+            <p className="text-gray-700 mb-2">
+              Expeditor for various residential and commercial businesses where I submitted approval packages for final City approval.
+            </p>
+          </div>
+
+          {/* Project 4 */}
+          <div className="mb-2">
+            <h3 className="text-xl font-semibold mb-2">NYC Hospitals</h3>
+            <p className="text-gray-700 mb-2">
+              Handle various violations and permit along with extensive renovations. Interactions included City and State agencies.
+            </p>
+          </div>
+        </section>
       </main>
 
       {/* 👇 Footer with visit counter */}
