@@ -134,10 +134,47 @@ export default function UnifiedDashboard() {
 
       <main className="max-w-6xl mx-auto px-6 pb-16">
         {mode === 'customer' && (
-          <section className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            {/* ... customer view unchanged ... */}
-            <section className="col-span-3">
+          <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center">
+            {/* Centered Project Form */}
+            <section className="col-span-2 flex flex-col items-center">
               <ProjectForm onSubmit={onSubmit} />
+              {/* Completed Projects Section aligned below ProjectForm */}
+              <section className="w-full mt-12 p-8 bg-white/90 rounded-xl shadow-lg border border-gray-200">
+                <h2 className="text-lg md:text-xl font-bold mb-6 text-brand-700 border-b pb-2">Complete Projects</h2>
+                {/* Project 1 */}
+                <div className="mb-8">
+                  <h3 className="text-base md:text-lg font-semibold mb-2">87-10 Northern Blvd, Jackson Heights NY 11369</h3>
+                  <ul className="list-disc list-inside text-gray-700 mb-2 space-y-1 text-xs md:text-sm">
+                    <li>Processed various permits</li>
+                    <li>Successfully represented owner and tenants to Secured proper filings with DOB/DEP and FDNY</li>
+                    <li>Managed Multiple City Agency Correspondences daily to advocate for the development.</li>
+                  </ul>
+                </div>
+                {/* Project 2 */}
+                <div className="mb-8">
+                  <h3 className="text-base md:text-lg font-semibold mb-2">47-16 Greenpoint Avenue, Sunnyside NY</h3>
+                  <ul className="list-disc list-inside text-gray-700 mb-2 space-y-1 text-xs md:text-sm">
+                    <li>Handled the entire building permitting process</li>
+                    <li>Cured associated violations from previous owners that would have normally halted the approval from Department of Buildings and Fire Department</li>
+                  </ul>
+                </div>
+                {/* Project 3 */}
+                <div className="mb-8">
+                  <h3 className="text-base md:text-lg font-semibold mb-2">Solar Panels - Residential and Commercial Residences</h3>
+                  <ul className="list-disc list-inside text-gray-700 mb-2 space-y-1 text-xs md:text-sm">
+                    <li>Expeditor for various businesses and homes where I submitted approval packages for final City approval. Filings consisted of over 100 applications.</li>
+                  </ul>
+                </div>
+                {/* Project 4 */}
+                <div className="mb-2">
+                  <h3 className="text-base md:text-lg font-semibold mb-2">NYC Hospitals</h3>
+                  <ul className="list-disc list-inside text-gray-700 mb-2 space-y-1 text-xs md:text-sm">
+                    <li>Handle and resolve various violations and Summon for over 14th Facilities.</li>
+                    <li>FDNY – Filings of various equipment permits</li>
+                    <li>Assist with renovations of units for future use.</li>
+                  </ul>
+                </div>
+              </section>
             </section>
           </section>
         )}
@@ -161,55 +198,12 @@ export default function UnifiedDashboard() {
             )}
           </section>
         )}
-
-        {/* === Completed Projects Section === */}
-        <section className="max-w-4xl mx-auto my-12 p-8 bg-white/90 rounded-xl shadow-lg border border-gray-200">
-          <h2 className="text-2xl font-bold mb-6 text-brand-700 border-b pb-2">Completed Projects</h2>
-
-          {/* Project 1 */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-2">87-10 Northern Blvd, Sunnyside NY</h3>
-            <div className="mb-2">
-              <span className="inline-block bg-gray-100 px-3 py-1 rounded text-sm text-gray-600 mr-2"></span>
-            </div>
-            <p className="text-gray-700 mb-2">
-              Processed the permits and secured proper filings with DEP and FDNY for the owner and tenants of the mixed use building. Consisting of office/ Retail/ Pre-School/ and an underground parking lot.
-            </p>
-          </div>
-
-          {/* Project 2 */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-2">47-16 Greenpoint Avenue, Sunnyside NY</h3>
-            <div className="mb-2">
-              <span className="inline-block bg-gray-100 px-3 py-1 rounded text-sm text-gray-600 mr-2"></span>
-            </div>
-            <p className="text-gray-700 mb-2">
-              Handled permitting process for a new large Condo project. Cured associated violations from previous owners that would have normally halted the approval from Department of Buildings and Fire Department
-            </p>
-          </div>
-
-          {/* Project 3 */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-2">Solar Panel</h3>
-            <p className="text-gray-700 mb-2">
-              Expeditor for various residential and commercial businesses where I submitted approval packages for final City approval.
-            </p>
-          </div>
-
-          {/* Project 4 */}
-          <div className="mb-2">
-            <h3 className="text-xl font-semibold mb-2">NYC Hospitals</h3>
-            <p className="text-gray-700 mb-2">
-              Handle various violations and permit along with extensive renovations. Interactions included City and State agencies.
-            </p>
-          </div>
-        </section>
       </main>
 
       {/* 👇 Footer with visit counter */}
-       <footer className="text-center py-4 text-sm text-gray-500">
-         {visitCount !== null && `Total visits: ${visitCount}`}
-       </footer>
+      <footer className="text-center py-4 text-sm text-gray-500">
+        {visitCount !== null && `Total visits: ${visitCount}`}
+      </footer>
 
     </div>
   );
