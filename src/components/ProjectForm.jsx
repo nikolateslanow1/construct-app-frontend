@@ -37,7 +37,7 @@ export default function ProjectForm({ onSubmit }) {
     };
 
     try {
-      const response = await fetch("https://construct-app-414b8cde3eb0.herokuapp.com/api/projects", {
+      const response = await fetch("https://www.citycodeexpeditor.com/api/projects", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
