@@ -37,23 +37,12 @@ export default function ProjectForm({ onSubmit }) {
     };
 
     try {
-      const response = await fetch("https://www.citycodeexpeditor.com/api/projects", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error("Submission failed:", errorText);
-      } else {
-        const result = await response.json();
-        console.log("Submission successful:", result);
+      if (onSubmit) {
+        await onSubmit(payload);
       }
+      console.log('Submission successful');
     } catch (error) {
-      console.error("Network error:", error);
+      console.error('Submission failed:', error);
     }
     setFormData(initialState);
   };

@@ -10,6 +10,7 @@ import {
   duplicateProject,
   deleteAllProjects,
   fetchVisits  
+  , downloadProjectsCsv
 } from '../lib/api';
 
 export default function UnifiedDashboard() {
@@ -53,6 +54,22 @@ export default function UnifiedDashboard() {
     await refresh();
   };
 
+  const onExportCsv = async () => {
+    try {
+      const blob = await downloadProjectsCsv();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'projects.csv';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('CSV export failed', err);
+      alert('CSV export failed. See console for details.');
+    }
+  };
   const onDeleteAll = async () => {
     if (window.confirm('Are you sure you want to delete all projects?')) {
       await deleteAllProjects();
@@ -185,7 +202,7 @@ export default function UnifiedDashboard() {
               <AdminLogin onLogin={() => setIsAuthenticated(true)} />
             ) : (
               <>
-                <AdminActions onDeleteAll={onDeleteAll} />
+                <AdminActions onDeleteAll={onDeleteAll} onExportCsv={onExportCsv} disableDeleteAll={true} />
                 <ProjectList
                   projects={projects}
                   loading={loading}
