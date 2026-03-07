@@ -1,0 +1,11 @@
+# robots.txt for construct-app-frontend
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.citycodeexpeditor.com/sitemap.xml
+
+# Optional: Disallow certain paths if needed
+Disallow: /admin/
+Disallow: /api/

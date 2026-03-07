@@ -83,7 +83,7 @@ export default function ProjectForm({ onSubmit }) {
           border: '2px solid #ff6600',
           display: 'inline-block'
         }}>
-          🎆 <span style={{ fontSize: '1.2em' }}>Free Project Evaluation and Quote</span> 🎆
+          🎆 <span style={{ fontSize: '1.5em' }}>Free Project Evaluation and Quote</span> 🎆
         </span>
       </div>
       {['name', 'address', 'phone', 'email'].map((field) => (
